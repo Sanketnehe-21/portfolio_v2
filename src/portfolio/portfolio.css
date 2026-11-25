@@ -1,0 +1,194 @@
+.portfolio-shell {
+  background-color: var(--expo-bg);
+  color: var(--text-default);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  overflow-x: clip;
+}
+
+.theme-header {
+  background-color: var(--expo-header);
+  border-color: var(--expo-border);
+}
+.theme-footer {
+  background-color: var(--expo-footer);
+  border-color: var(--expo-border);
+}
+.theme-surface {
+  background-color: var(--expo-subtle);
+  border-color: var(--expo-border);
+}
+.theme-inner {
+  background-color: var(--expo-inner);
+  border-color: var(--expo-border);
+}
+.theme-dropdown {
+  background-color: var(--expo-dropdown);
+  border-color: var(--expo-border);
+}
+.theme-border {
+  border-color: var(--expo-border);
+}
+.theme-text {
+  color: var(--text-default);
+}
+.theme-muted {
+  color: var(--text-secondary);
+}
+.theme-subtle-text {
+  color: var(--text-tertiary);
+}
+.theme-pill {
+  background-color: var(--expo-pill-bg);
+  border: 1px solid var(--expo-border);
+  color: var(--text-secondary);
+}
+.theme-pill:hover {
+  background-color: var(--expo-pill-hover);
+  color: var(--text-default);
+}
+.theme-btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+.theme-btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+}
+.theme-input {
+  background-color: var(--expo-element);
+  border: 1px solid var(--expo-border);
+  color: var(--text-default);
+}
+
+/* Infinite Carousel Animation */
+@keyframes logo-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: logo-carousel 32s linear infinite;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+.mask-carousel {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Badge marquee */
+@keyframes badge-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.badge-track {
+  display: flex;
+  width: max-content;
+  animation: badge-scroll 22s linear infinite;
+}
+.badge-track:hover {
+  animation-play-state: paused;
+}
+
+/* Card styling */
+.expo-card {
+  background-color: var(--expo-subtle);
+  border: 1px solid var(--expo-border);
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.expo-card:hover {
+  border-color: var(--expo-border-hover);
+  transform: translateY(-2px);
+}
+.expo-card-featured {
+  background-color: var(--featured-bg);
+  border-color: var(--featured-border);
+}
+
+/* Stack tile in marquee */
+.stack-tile {
+  background-color: var(--expo-subtle);
+  border: 1px solid var(--expo-border);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.25);
+}
+
+/* Glow backdrop */
+.hero-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 860px;
+  height: 480px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.18) 0%,
+    rgba(99, 102, 241, 0.06) 45%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Timeline styling */
+.timeline-line {
+  position: absolute;
+  left: 11px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--expo-border);
+}
+.timeline-step .step-indicator {
+  background-color: var(--expo-element);
+  border-color: var(--expo-border-hover);
+}
+.timeline-step.active .step-indicator {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+}
+.timeline-step .step-title {
+  color: var(--text-secondary);
+}
+.timeline-step.active .step-title {
+  color: var(--text-default);
+}
+.timeline-step.active .step-desc {
+  display: block;
+  opacity: 1;
+  max-height: 200px;
+}
+.timeline-step .step-desc {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown helper */
+.dropdown-trigger:hover .dropdown-panel,
+.dropdown-trigger:focus-within .dropdown-panel {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Filter pill active state */
+.filter-pill.active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: transparent;
+}
