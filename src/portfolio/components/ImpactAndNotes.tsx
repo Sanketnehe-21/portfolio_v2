@@ -40,7 +40,7 @@ const PROFILE_CARDS = [
     accent: 'bg-rose-500/20 text-rose-400',
     title: 'Awards, Hackathons & Languages',
     subtitle: 'EXALT 2023–24 Winner · OSS Author',
-    body: 'Winner – EXALT 2023–24 (APSIT) · Hackathon Participant · Open-source contributor (rn-whiteboard-kit). Fluent in English, Hindi, and Marathi.',
+    body: 'Winner – EXALT 2023–24 (APSIT) · Hackathon Participant · Open-source author (rn-whiteboard-kit, expo-location-keepalive). Fluent in English, Hindi, and Marathi.',
   },
 ]
 
@@ -69,9 +69,9 @@ export function ImpactAndNotes() {
             </div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold theme-text font-mono">npm OSS</div>
+            <div className="text-2xl sm:text-3xl font-extrabold theme-text font-mono">2 npm Libs</div>
             <div className="mt-1 text-xs theme-muted uppercase tracking-wider font-medium">
-              rn-whiteboard-kit
+              published open source
             </div>
           </div>
         </div>

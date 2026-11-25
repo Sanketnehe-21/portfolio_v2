@@ -146,6 +146,16 @@ export function CtaAndFooter({
                 </a>
               </li>
               <li>
+                <a
+                  href="https://www.npmjs.com/package/expo-location-keepalive"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[var(--text-default)] transition-colors"
+                >
+                  expo-location-keepalive
+                </a>
+              </li>
+              <li>
                 <a href="#projects" className="hover:text-[var(--text-default)] transition-colors">
                   rn-whiteboard-kit
                 </a>

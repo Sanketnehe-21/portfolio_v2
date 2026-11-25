@@ -64,7 +64,7 @@ export function CoreCraft() {
               </span>
             </h4>
             <p className="text-sm theme-muted leading-relaxed">
-              Native module integration, REST API design, Google Maps API tracking, Firebase Firestore real-time synchronization, and npm library authoring (<span className="font-mono">rn-whiteboard-kit</span>).
+              Native module integration, REST API design, Google Maps API tracking, Firebase Firestore real-time synchronization, and npm packages (<span className="font-mono">rn-whiteboard-kit</span>, <span className="font-mono">expo-location-keepalive</span>).
             </p>
           </div>
           <div className="mt-8 pt-4 border-t theme-border">

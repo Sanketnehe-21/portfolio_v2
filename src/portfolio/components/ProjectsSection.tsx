@@ -40,6 +40,18 @@ const PROJECTS: ProjectCardItem[] = [
     featured: true,
   },
   {
+    id: 'expo-location-keepalive',
+    badge: 'Open-Source npm Package • Android • Featured',
+    titleLine1: 'expo-location-keepalive',
+    titleLine2: 'Background Location Keepalive',
+    description:
+      'MIT-licensed npm package (v0.1.0) that keeps expo-location foreground/background tracking alive on Android after swipe-away or OEM battery kills (Xiaomi, Oppo, Vivo, TECNO, Samsung).',
+    ctaLabel: 'View on npm',
+    href: 'https://www.npmjs.com/package/expo-location-keepalive',
+    tags: ['mobile', 'oss'],
+    featured: true,
+  },
+  {
     id: 'binnys-suite',
     badge: 'Play Store Production • Binnys Management',
     titleLine1: 'Create, Vision, Scan,',
