@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --expo-bg: #0d0f12;
+  --expo-subtle: #12151b;
+  --expo-element: #181c24;
+  --expo-inner: #0d0f14;
+  --expo-header: rgba(11, 13, 14, 0.85);
+  --expo-footer: #090b0e;
+  --expo-dropdown: #141820;
+  --expo-border: rgba(255, 255, 255, 0.08);
+  --expo-border-hover: rgba(255, 255, 255, 0.18);
+  --expo-pill-bg: rgba(255, 255, 255, 0.05);
+  --expo-pill-hover: rgba(255, 255, 255, 0.1);
+  --text-default: #f4f5f8;
+  --text-secondary: #9ba1ad;
+  --text-tertiary: #68707e;
+  --btn-primary-bg: #ffffff;
+  --btn-primary-text: #090b0e;
+  --btn-primary-hover: #e4e4e7;
+  --blue-accent: #3b82f6;
+  --featured-bg: rgba(23, 37, 84, 0.18);
+  --featured-border: rgba(59, 130, 246, 0.25);
+}
+
+html.light {
+  --expo-bg: #ffffff;
+  --expo-subtle: #f8f9fb;
+  --expo-element: #eef1f5;
+  --expo-inner: #f1f5f9;
+  --expo-header: rgba(255, 255, 255, 0.88);
+  --expo-footer: #f4f6f8;
+  --expo-dropdown: #ffffff;
+  --expo-border: rgba(15, 23, 42, 0.09);
+  --expo-border-hover: rgba(15, 23, 42, 0.2);
+  --expo-pill-bg: rgba(15, 23, 42, 0.04);
+  --expo-pill-hover: rgba(15, 23, 42, 0.08);
+  --text-default: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --btn-primary-bg: #0f172a;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #1e293b;
+  --blue-accent: #2563eb;
+  --featured-bg: rgba(59, 130, 246, 0.06);
+  --featured-border: rgba(37, 99, 235, 0.28);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: #020306;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+}

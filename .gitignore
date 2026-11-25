@@ -1,1 +1,9 @@
-/index.html
+node_modules
+dist
+.env
+.env.*
+playwright-report
+test-results
+reference
+*.zip
+public/models/human/
