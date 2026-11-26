@@ -124,13 +124,29 @@ interface ExperienceState {
   cleanup: () => void
 }
 
+export function detectInitialQualityTier(): QualityTier {
+  if (typeof window === 'undefined') return 'balanced'
+  const paramTier = new URLSearchParams(window.location.search).get('quality')
+  if (paramTier === 'low' || paramTier === 'balanced' || paramTier === 'ultra') {
+    return paramTier
+  }
+  const cores = navigator.hardwareConcurrency || 4
+  const isMobile = window.innerWidth < 768
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8
+  if (isMobile || cores <= 4 || memory <= 4) return 'low'
+  if (cores >= 8 && memory >= 8) return 'ultra'
+  return 'balanced'
+}
+
+const INITIAL_TIER = detectInitialQualityTier()
+
 export const useExperienceStore = create<ExperienceState>((set, get) => ({
   phase: 'BOOT',
   humanReady: false,
   nameReady: false,
   shadersPrecompiled: false,
-  qualityTier: 'balanced',
-  particleCount: QUALITY_PROFILES.balanced.humanPoints,
+  qualityTier: INITIAL_TIER,
+  particleCount: QUALITY_PROFILES[INITIAL_TIER].humanPoints,
   reducedMotion: false,
   webglSupported: true,
   isTransitionLocked: false,
