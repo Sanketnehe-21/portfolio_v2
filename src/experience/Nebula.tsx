@@ -19,22 +19,17 @@ uniform float uReveal;
 uniform float uOpacity;
 
 void main() {
-  vec2 centered = vUv - vec2(0.5);
-  float radial = 1.0 - smoothstep(0.05, 0.68, length(centered * vec2(1.0, 1.25)));
-  if (radial <= 0.005) discard;
-
-  float n1 = snoise(vec3(vUv * 2.4, uTime * 0.018));
-  float n2 = 0.5 * sin(vUv.x * 11.0 + n1 * 2.5 - uTime * 0.02) * cos(vUv.y * 9.0 - n1 * 2.0);
-  float mist = smoothstep(-0.35, 0.75, n1 * 0.72 + n2 * 0.28) * radial;
-
-  vec3 charcoal = vec3(0.063, 0.075, 0.125); // #101320
-  vec3 faintViolet = vec3(0.157, 0.145, 0.235); // #28253C
-
-  vec3 col = mix(charcoal, faintViolet, smoothstep(0.15, 0.85, n1 * 0.5 + 0.5));
-  float alpha = mist * 0.38 * uReveal * uOpacity;
-  if (alpha < 0.004) discard;
-
-  gl_FragColor = vec4(col, alpha);
+  vec2 sky = vUv * vec2(3.0, 2.0);
+  float cloud = snoise(vec3(sky * 2.0, 0.3));
+  cloud += 0.5 * snoise(vec3(sky * 4.0, 1.7));
+  cloud += 0.25 * snoise(vec3(sky * 8.0, 3.1));
+  cloud += 0.125 * snoise(vec3(sky * 16.0, 4.8));
+  float dust = smoothstep(-0.8, 1.1, cloud);
+  float grain = fract(sin(dot(vUv * 1700.0, vec2(12.9898, 78.233))) * 43758.5453);
+  float speck = pow(grain, 85.0) * 0.12;
+  vec3 col = mix(vec3(0.015, 0.025, 0.028), vec3(0.10, 0.16, 0.17), dust);
+  col += (grain - 0.5) * 0.025 + speck;
+  gl_FragColor = vec4(col * 0.12, uReveal * uOpacity * 0.9);
 }
 `
 
@@ -66,7 +61,7 @@ export function Nebula() {
   })
 
   return (
-    <mesh position={[0.4, 0.15, -14]} scale={[22, 14, 1]} material={material}>
+    <mesh position={[0, 0, -30]} scale={[100, 70, 1]} material={material}>
       <planeGeometry args={[1, 1]} />
     </mesh>
   )

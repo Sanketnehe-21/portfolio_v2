@@ -20,38 +20,26 @@ export interface VirgoStarInfo {
   sizeScale: number
 }
 
-/**
- * Classic IAU Virgo asterism (Spica, Porrima, Vindemiatrix, Auva, Heze, Zaniah, Zavijava, Syrma...)
- * positioned right behind the 3D human bust and starfield sky.
- */
+/** Stylized Virgo layout following the supplied visual reference. */
 const VIRGO_STARS: VirgoStarInfo[] = [
-  { id: 'vindemiatrix', name: 'Vindemiatrix', bayer: 'ε Virginis', mag: '+2.85', nx: -0.36, ny: 0.96, sizeScale: 1.15 },
-  { id: 'auva', name: 'Auva', bayer: 'δ Virginis', mag: '+3.38', nx: -0.20, ny: 0.36, sizeScale: 1.0 },
-  { id: 'zavijava', name: 'Zavijava', bayer: 'β Virginis', mag: '+3.61', nx: 0.72, ny: 0.50, sizeScale: 1.0 },
-  { id: 'zaniah', name: 'Zaniah', bayer: 'η Virginis', mag: '+3.89', nx: 0.30, ny: 0.20, sizeScale: 0.92 },
-  { id: 'porrima', name: 'Porrima', bayer: 'γ Virginis', mag: '+2.74', nx: 0.00, ny: -0.02, sizeScale: 1.2 },
-  { id: 'heze', name: 'Heze', bayer: 'ζ Virginis', mag: '+3.37', nx: -0.58, ny: 0.16, sizeScale: 1.02 },
-  { id: 'spica', name: 'Spica', bayer: 'α Virginis · Primary Star', mag: '+0.97', nx: -0.26, ny: -0.64, sizeScale: 1.65 },
-  { id: 'syrma', name: 'Syrma', bayer: 'ι Virginis', mag: '+4.07', nx: 0.24, ny: -0.56, sizeScale: 0.92 },
-  { id: 'rijl', name: 'Rijl al Awwa', bayer: 'μ Virginis', mag: '+3.88', nx: 0.54, ny: -0.84, sizeScale: 0.95 },
-  { id: 'tau', name: 'Tau Virginis', bayer: 'τ Virginis', mag: '+4.23', nx: -0.80, ny: 0.48, sizeScale: 0.88 },
-  { id: '109vir', name: '109 Virginis', bayer: '109 Virginis', mag: '+3.72', nx: -0.96, ny: -0.06, sizeScale: 0.95 },
+  { id: 'vindemiatrix', name: 'Vindemiatrix', bayer: 'ε Virginis', mag: '+2.85', nx: -0.05, ny: 0.82, sizeScale: 1.15 },
+  { id: 'auva', name: 'Auva', bayer: 'δ Virginis', mag: '+3.38', nx: 0.2, ny: 0.55, sizeScale: 1.0 },
+  { id: 'zavijava', name: 'Zavijava', bayer: 'β Virginis', mag: '+3.61', nx: -0.98, ny: -0.18, sizeScale: 1.0 },
+  { id: 'zaniah', name: 'Zaniah', bayer: 'η Virginis', mag: '+3.89', nx: -0.48, ny: 0.04, sizeScale: 0.92 },
+  { id: 'porrima', name: 'Porrima', bayer: 'γ Virginis', mag: '+2.74', nx: -0.1, ny: 0.12, sizeScale: 1.2 },
+  { id: 'heze', name: 'Heze', bayer: 'ζ Virginis', mag: '+3.37', nx: 0.47, ny: 0.43, sizeScale: 1.02 },
+  { id: 'spica', name: 'Spica', bayer: 'α Virginis · Primary Star', mag: '+0.97', nx: 0.22, ny: -0.27, sizeScale: 1.65 },
+  { id: 'syrma', name: 'Syrma', bayer: 'ι Virginis', mag: '+4.07', nx: -0.48, ny: -0.4, sizeScale: 0.92 },
+  { id: 'rijl', name: 'Rijl al Awwa', bayer: 'μ Virginis', mag: '+3.88', nx: -0.82, ny: -0.51, sizeScale: 0.95 },
+  { id: 'tau', name: 'Tau Virginis', bayer: 'τ Virginis', mag: '+4.23', nx: 0.72, ny: 0.67, sizeScale: 0.88 },
+  { id: '109vir', name: '109 Virginis', bayer: '109 Virginis', mag: '+3.72', nx: 0.94, ny: 1.02, sizeScale: 0.95 },
 ]
 
 const VIRGO_EDGES: [number, number][] = [
-  [0, 1], // Vindemiatrix -> Auva
-  [1, 4], // Auva -> Porrima
-  [4, 6], // Porrima -> Spica
-  [6, 5], // Spica -> Heze
-  [5, 1], // Heze -> Auva
-  [4, 3], // Porrima -> Zaniah
-  [3, 2], // Zaniah -> Zavijava
-  [4, 7], // Porrima -> Syrma
-  [7, 8], // Syrma -> Rijl al Awwa
-  [5, 9], // Heze -> Tau Vir
-  [5, 10], // Heze -> 109 Vir
+  [0, 1], [1, 5], [5, 9], [9, 10],
+  [1, 4], [4, 3], [3, 2],
+  [4, 6], [5, 6], [6, 7], [7, 8],
 ]
-
 const AMBIENT_CONSTELLATION_SETS: ConstellationNode[][] = []
 
 export interface VirgoHoverDomState {
@@ -98,8 +86,8 @@ export function Constellations({
 
   // Compact, delicate Virgo constellation framed in the focal celestial region
   const virgoWorldStars = useMemo(() => {
-    const scaleX = isMobile ? 0.86 : 1.26
-    const scaleY = isMobile ? 0.84 : 1.04
+    const scaleX = isMobile ? 1.1 : 1.85
+    const scaleY = isMobile ? 1.5 : 2.2
     const offsetX = isMobile ? 0.12 : 1.55
     const offsetY = isMobile ? 0.02 : 0.04
     const zDepth = -5.4
@@ -171,8 +159,8 @@ export function Constellations({
 
     const vPts = new Float32Array(virgoWorldStars.length * 3)
     const vColors = new Float32Array(virgoWorldStars.length * 3)
-    const brightColor = new THREE.Color('#DCE7FF')
-    const baseStarColor = new THREE.Color('#B8C2DC')
+    const brightColor = new THREE.Color('#F1FFF9')
+    const baseStarColor = new THREE.Color('#E0F4EF')
 
     virgoWorldStars.forEach((s, idx) => {
       vPts[idx * 3] = s.worldPos.x
@@ -195,13 +183,33 @@ export function Constellations({
     sHaloGeo.translate(spica.worldPos.x, spica.worldPos.y, spica.worldPos.z)
 
     const vLMat = new THREE.LineBasicMaterial({
-      color: '#8DA2CE',
+      color: '#C4DEDA',
       transparent: true,
       opacity: 0,
       depthWrite: false,
     })
+    // Soft four-point stars with a fine halo, matching the illustrated sky.
+    const starPixels = new Uint8Array(64 * 64 * 4)
+    for (let y = 0; y < 64; y++) {
+      for (let x = 0; x < 64; x++) {
+        const dx = Math.abs((x - 31.5) / 31.5)
+        const dy = Math.abs((y - 31.5) / 31.5)
+        const radius = Math.hypot(dx, dy)
+        const flare = Math.max(0, 1 - Math.sqrt(dx) - Math.sqrt(dy))
+        const alpha = Math.min(1, flare * 3 + Math.exp(-radius * radius * 24) * 0.65)
+        const index = (y * 64 + x) * 4
+        starPixels[index] = 255
+        starPixels[index + 1] = 255
+        starPixels[index + 2] = 255
+        starPixels[index + 3] = Math.round(alpha * 255)
+      }
+    }
+    const starTexture = new THREE.DataTexture(starPixels, 64, 64)
+    starTexture.needsUpdate = true
+    starTexture.magFilter = THREE.LinearFilter
     const vPMat = new THREE.PointsMaterial({
-      size: 0.058,
+      size: 0.40,
+      map: starTexture,
       vertexColors: true,
       transparent: true,
       opacity: 0,
@@ -255,6 +263,7 @@ export function Constellations({
       spicaHaloGeo.dispose()
       virgoLineMat.dispose()
       virgoPointMat.dispose()
+      virgoPointMat.map?.dispose()
       spicaHaloMat.dispose()
       reticleObj.geometry.dispose()
       reticleMat.dispose()
@@ -337,12 +346,12 @@ export function Constellations({
     hoverBlendRef.current += (targetBlend - hoverBlendRef.current) * (1 - Math.exp(-dt * 8))
 
     // Virgo constellation luminosity boosts smoothly on hover across the whole sign
-    virgoLineMat.opacity = (0.28 + hoverBlendRef.current * 0.48) * visibility
+    virgoLineMat.opacity = (0.55 + hoverBlendRef.current * 0.30) * visibility
     virgoPointMat.opacity = (0.76 + hoverBlendRef.current * 0.24) * visibility
-    virgoPointMat.size = 0.058 + hoverBlendRef.current * 0.020
+    virgoPointMat.size = 0.40 + hoverBlendRef.current * 0.04
 
     const pulse = 0.5 + 0.5 * Math.sin(state.clock.elapsedTime * 2.2)
-    spicaHaloMat.opacity = (0.24 + pulse * 0.18 + hoverBlendRef.current * 0.35) * visibility
+    spicaHaloMat.opacity = hoverBlendRef.current * 0.35 * visibility
 
     const focusStar = hoveredStar ?? (forceHighlightRef.current ? virgoWorldStars[6] : null)
     if (focusStar && visibility > 0.2) {

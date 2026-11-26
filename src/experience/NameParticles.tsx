@@ -167,6 +167,7 @@ export function NameParticles({
     const trail = Array.from({ length: 10 }, () => new THREE.Vector4(0, 0, -1, 0))
 
     return new THREE.ShaderMaterial({
+      defines: { NAME_PARTICLES: 1 },
       vertexShader,
       fragmentShader: humanFragGlsl,
       transparent: true,

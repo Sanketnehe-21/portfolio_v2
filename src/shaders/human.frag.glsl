@@ -26,6 +26,10 @@ void main() {
   baseColor = mix(baseColor, interactionTint, clamp(vInteractionGlow * 0.42, 0.0, 0.42));
 
   float alpha = shape * vAlpha * vDepthFade;
+  #ifdef NAME_PARTICLES
+    baseColor = mix(vec3(0.85, 0.91, 0.95), vec3(1.0), vLuminance);
+    alpha = min(1.0, alpha * 1.7);
+  #endif
   if (alpha < 0.018) discard;
 
   gl_FragColor = vec4(baseColor, alpha);

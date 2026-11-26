@@ -6,6 +6,7 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing'
 // import { HumanParticles } from './HumanParticles'
 import { NameParticles } from './NameParticles'
 import { Starfield } from './Starfield'
+import { Nebula } from './Nebula'
 import { Constellations, type VirgoHoverDomState } from './Constellations'
 import { CameraRig } from './CameraRig'
 import { PerfProfiler } from './PerfProfiler'
@@ -126,6 +127,7 @@ function SceneContent({
       />
 
       <CameraRig />
+      <Nebula />
       <Starfield qualityUniform={qualityUniform} count={starCount} />
       <Constellations
         isMobile={isMobile}
@@ -387,7 +389,7 @@ export function Experience() {
                   title="Hover Virgo constellation or click to inspect birth sign"
                 >
                   <span aria-hidden="true">♍</span>
-                  <span className="sm:hidden">VIRGO · 21 SEP 2003</span>
+                  <span className="sm:hidden">VIRGO</span>
                   <span className="hidden sm:inline">VIRGO · RA 13h 25m · DEC −11° 09&apos;</span>
                 </button>
               </div>

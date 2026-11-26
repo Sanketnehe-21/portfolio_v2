@@ -175,4 +175,7 @@ void main() {
   baseSize *= mix(1.0, 0.80, uTransitionProgress);
   float distScale = 2.65 / max(0.6, -mvPosition.z);
   gl_PointSize = clamp(baseSize * distScale * uPixelRatio, 1.0, 4.3);
+  #ifdef NAME_PARTICLES
+    gl_PointSize *= 1.25;
+  #endif
 }
