@@ -59,6 +59,7 @@ function SceneContent({
   const { size, gl, scene, camera } = useThree()
   const humanReady = useExperienceStore((s) => s.humanReady)
   const nameReady = useExperienceStore((s) => s.nameReady)
+  const qualityTier = useExperienceStore((s) => s.qualityTier)
   const setHumanReady = useExperienceStore((s) => s.setHumanReady)
   const setShadersPrecompiled = useExperienceStore((s) => s.setShadersPrecompiled)
   const degradeQuality = useExperienceStore((s) => s.degradeQuality)
@@ -116,13 +117,17 @@ function SceneContent({
       <PerfProfiler visible={showPerf && isCanvasActive} />
 
       <PerformanceMonitor
-        bounds={() => [45, 60]}
-        flipflops={3}
+        bounds={(refreshrate) => [
+          Math.min(42, refreshrate * 0.7),
+          Math.min(58, refreshrate * 0.94),
+        ]}
+        flipflops={1}
         onDecline={() => {
           if (!qualityLocked) degradeQuality()
         }}
         onIncline={() => {
-          if (!qualityLocked) upgradeQuality()
+          // Only upgrade low -> balanced so EffectComposer never toggles on/off mid-session
+          if (!qualityLocked && qualityTier === 'low') upgradeQuality()
         }}
       />
 
@@ -187,6 +192,8 @@ export function Experience() {
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   )
+  // Keep initial Canvas DPR fixed after mount so adaptive quality never resizes/clears the buffer mid-frame
+  const [canvasDpr] = useState(() => dpr)
   const [missingModelNote, setMissingModelNote] = useState<string | null>(null)
   const [paused, setPaused] = useState(false)
 
@@ -321,7 +328,7 @@ export function Experience() {
       }}
     >
       <Canvas
-        dpr={dpr}
+        dpr={canvasDpr}
         shadows={false}
         frameloop={paused || !isCanvasActive ? 'never' : 'always'}
         style={{ background: '#020306' }}

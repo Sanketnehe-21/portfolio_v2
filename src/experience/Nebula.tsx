@@ -82,6 +82,7 @@ export function Nebula() {
       transparent: true,
       opacity: 0.9,
       depthWrite: false,
+      depthTest: false,
     })
   }, [])
 
@@ -97,7 +98,7 @@ export function Nebula() {
   })
 
   return (
-    <mesh position={[0, 0, -30]} scale={[100, 70, 1]} material={material}>
+    <mesh position={[0, 0, -30]} scale={[100, 70, 1]} renderOrder={-20} material={material}>
       <planeGeometry args={[1, 1]} />
     </mesh>
   )
