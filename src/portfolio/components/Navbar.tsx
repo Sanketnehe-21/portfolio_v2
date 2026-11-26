@@ -28,7 +28,7 @@ export function Navbar({ isLight, onToggleTheme }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <a href="#top" onClick={() => setMenuOpen(false)} className="font-bold text-lg tracking-tight theme-text shrink-0">
-          sanket.dev
+          Sanket Nehe
         </a>
 
         <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8 text-sm font-medium theme-muted">

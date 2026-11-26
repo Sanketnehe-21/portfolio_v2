@@ -32,7 +32,7 @@ export function CoreCraft() {
               Binnys Management — React Native Developer
             </h4>
             <p className="text-sm theme-muted leading-relaxed">
-              Contributed across 5 Play Store apps (<span className="theme-text font-medium">Create, Vision, Scan, MyBinnyst, Track</span>) — shipping end-to-end features, UI polish, rendering efficiency gains, and REST API integrations.
+              Shipping production Play Store apps (<span className="theme-text font-medium">Create, Vision, Scan, MyBinnyst, Track</span>) using Expo &amp; EAS — real-time field-agent tracking, push notifications, rendering optimization, and REST APIs.
             </p>
           </div>
           <div className="mt-8 pt-4 border-t theme-border">
@@ -58,13 +58,13 @@ export function CoreCraft() {
             </div>
             <h4 className="text-2xl font-bold theme-text mb-2">
               Cross-platform mobile{' '}
-              <span className="font-normal theme-muted">with</span>{' '}
+              <span className="font-normal theme-muted">&amp; web with</span>{' '}
               <span className="font-mono text-sm px-2 py-0.5 rounded border theme-border bg-[var(--expo-element)]">
-                Expo &amp; Maps
+                Expo, EAS &amp; Maps
               </span>
             </h4>
             <p className="text-sm theme-muted leading-relaxed">
-              Native module integration, REST API design, Google Maps API tracking, Firebase Firestore real-time synchronization, and npm packages (<span className="font-mono">rn-whiteboard-kit</span>, <span className="font-mono">expo-location-keepalive</span>).
+              Android/iOS EAS releases, native modules, barcode/QR workflows, Google Maps API, OneSignal push alerts, Meta WhatsApp API, Firebase Firestore sync, and open-source npm authoring (<span className="font-mono">expo-location-keepalive</span>).
             </p>
           </div>
           <div className="mt-8 pt-4 border-t theme-border">

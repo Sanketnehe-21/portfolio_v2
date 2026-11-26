@@ -9,12 +9,12 @@ interface CtaAndFooterProps {
 }
 
 const CAPABILITY_BADGES = [
-  { primary: 'React Native', secondary: 'Expo' },
-  { primary: 'TypeScript', secondary: 'Strict' },
-  { primary: 'Firebase', secondary: 'Firestore' },
-  { primary: 'Google Maps API', secondary: '' },
-  { primary: 'MySQL & MongoDB', secondary: '' },
-  { primary: 'AWS & GCP', secondary: 'Cloud' },
+  { primary: 'React Native', secondary: 'Expo & EAS' },
+  { primary: 'React.js', secondary: 'TypeScript' },
+  { primary: 'Node & Express', secondary: 'REST APIs' },
+  { primary: 'PostgreSQL', secondary: 'Mongo & MySQL' },
+  { primary: 'Google Maps', secondary: 'OneSignal' },
+  { primary: 'AWS & GCP', secondary: 'Firebase' },
   { primary: 'Three.js', secondary: 'GLSL' },
 ]
 
@@ -58,7 +58,7 @@ export function CtaAndFooter({
             thoughtful
           </h2>
           <p className="text-sm sm:text-base theme-muted">
-            Mumbai, India · +91 93093 67739 · Open to impactful Mobile &amp; Full-Stack roles
+            Mumbai, India · +91 93093 67739 · Open to Mumbai | Pune | Bangalore | Hyderabad | Remote
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
@@ -163,7 +163,7 @@ export function CtaAndFooter({
               </li>
               <li>
                 <a href="#projects" className="hover:text-[var(--text-default)] transition-colors">
-                  Play Store Suite
+                  Binnys FAB &amp; Scan
                 </a>
               </li>
             </ul>
@@ -212,6 +212,16 @@ export function CtaAndFooter({
                   Skills &amp; Education
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://sanketnehe-21.github.io/portfolio/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[var(--text-default)] transition-colors"
+                >
+                  Portfolio v1 (Gaming) ↗
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -231,7 +241,7 @@ export function CtaAndFooter({
               <li>
                 <a
                   href="mailto:sanketnehe21@gmail.com"
-                  className="hover:text-[var(--text-default)] transition-colors"
+                  className="inline-block max-w-full break-all md:break-normal md:whitespace-nowrap hover:text-[var(--text-default)] transition-colors"
                 >
                   sanketnehe21@gmail.com
                 </a>

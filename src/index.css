@@ -24,26 +24,26 @@
 }
 
 html.light {
-  --expo-bg: #ffffff;
-  --expo-subtle: #f8f9fb;
-  --expo-element: #eef1f5;
-  --expo-inner: #f1f5f9;
-  --expo-header: rgba(255, 255, 255, 0.88);
-  --expo-footer: #f4f6f8;
+  --expo-bg: #f8fafc;
+  --expo-subtle: #ffffff;
+  --expo-element: #e2e8f0;
+  --expo-inner: #eef2f6;
+  --expo-header: rgba(248, 250, 252, 0.92);
+  --expo-footer: #f1f5f9;
   --expo-dropdown: #ffffff;
-  --expo-border: rgba(15, 23, 42, 0.09);
-  --expo-border-hover: rgba(15, 23, 42, 0.2);
-  --expo-pill-bg: rgba(15, 23, 42, 0.04);
-  --expo-pill-hover: rgba(15, 23, 42, 0.08);
+  --expo-border: rgba(15, 23, 42, 0.14);
+  --expo-border-hover: rgba(15, 23, 42, 0.28);
+  --expo-pill-bg: #eef2f6;
+  --expo-pill-hover: #e2e8f0;
   --text-default: #0f172a;
-  --text-secondary: #475569;
-  --text-tertiary: #64748b;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
   --btn-primary-bg: #0f172a;
   --btn-primary-text: #ffffff;
   --btn-primary-hover: #1e293b;
-  --blue-accent: #2563eb;
-  --featured-bg: rgba(59, 130, 246, 0.06);
-  --featured-border: rgba(37, 99, 235, 0.28);
+  --blue-accent: #1d4ed8;
+  --featured-bg: rgba(37, 99, 235, 0.05);
+  --featured-border: rgba(37, 99, 235, 0.34);
 }
 
 html,

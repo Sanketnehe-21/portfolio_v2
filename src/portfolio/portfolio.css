@@ -126,6 +126,33 @@
   box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.25);
 }
 
+html.light .expo-card {
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+html.light .stack-tile {
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.09);
+}
+
+/* Darken bright dark-mode accent text/badges automatically when html.light is active */
+html.light .text-blue-400 { color: #1d4ed8; }
+html.light .hover\:text-blue-300:hover { color: #1e40af; }
+html.light .text-cyan-400 { color: #0e7490; }
+html.light .text-emerald-400 { color: #047857; }
+html.light .text-amber-400 { color: #b45309; }
+html.light .text-purple-400 { color: #6d28d9; }
+html.light .bg-amber-500\/10 { background-color: rgba(217, 119, 6, 0.12); }
+html.light .border-amber-500\/20 { border-color: rgba(180, 83, 9, 0.3); }
+html.light .bg-purple-500\/10 { background-color: rgba(124, 58, 237, 0.11); }
+html.light .border-purple-500\/20 { border-color: rgba(109, 40, 217, 0.28); }
+html.light .bg-cyan-500\/10 { background-color: rgba(8, 145, 178, 0.11); }
+html.light .border-cyan-500\/20 { border-color: rgba(14, 116, 144, 0.28); }
+html.light .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.11); }
+html.light .border-emerald-500\/20 { border-color: rgba(4, 120, 87, 0.28); }
+html.light .bg-blue-500\/15 { background-color: rgba(37, 99, 235, 0.12); }
+html.light .border-blue-500\/25,
+html.light .border-blue-500\/35 { border-color: rgba(29, 78, 216, 0.32); }
+
 html:not(.light) .stack-logo-monochrome {
   filter: invert(1);
 }

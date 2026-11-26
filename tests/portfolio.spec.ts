@@ -44,9 +44,9 @@ test.describe('The Observable Self — End-to-End Flow', () => {
     await page.locator('#project-filters').getByRole('button', { name: 'Open Source' }).click()
     await expect(page.locator('#projects-grid .project-card')).toHaveCount(2)
     await page.locator('#project-filters').getByRole('button', { name: '3D / Shaders' }).click()
-    await expect(page.locator('#projects-grid .project-card')).toHaveCount(1)
+    await expect(page.locator('#projects-grid .project-card')).toHaveCount(2)
     await page.locator('#project-filters').getByRole('button', { name: 'All' }).click()
-    await expect(page.locator('#projects-grid .project-card')).toHaveCount(9)
+    await expect(page.locator('#projects-grid .project-card')).toHaveCount(10)
 
     // Verify replay intro navigates back to / and stays on / across reload
     await page.getByRole('button', { name: /Replay intro/i }).first().click()

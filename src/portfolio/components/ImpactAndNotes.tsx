@@ -1,9 +1,9 @@
 const SKILL_GROUPS = [
-  { title: 'Mobile & frontend', skills: ['React Native', 'Expo', 'React', 'Android / iOS native modules', 'HTML', 'CSS'] },
-  { title: 'Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'Java', 'C'] },
-  { title: 'Data & APIs', skills: ['Firebase Firestore', 'MySQL', 'MongoDB', 'REST APIs', 'Google Maps API'] },
-  { title: 'Cloud & collaboration', skills: ['AWS', 'Google Cloud', 'Firebase', 'Git', 'GitHub', 'Bitbucket', 'Figma', 'npm'] },
-  { title: 'Operations', skills: ['Application troubleshooting', 'Log analysis', 'Incident & problem management'] },
+  { title: 'Mobile', skills: ['React Native', 'Expo', 'Android', 'iOS', 'EAS Build', 'Native modules', 'Push notifications'] },
+  { title: 'Frontend & languages', skills: ['React.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'PHP', 'Python', 'Java', 'C'] },
+  { title: 'Backend & databases', skills: ['Node.js', 'Express.js', 'REST APIs', 'MySQL', 'MongoDB', 'PostgreSQL', 'Firebase Firestore'] },
+  { title: 'Integration', skills: ['Google Maps API', 'Real-time data sync', 'OneSignal', 'Barcode & QR scanning', 'Meta / WhatsApp API'] },
+  { title: 'Tools & cloud', skills: ['Git', 'GitHub', 'Bitbucket', 'npm', 'VS Code', 'Figma', 'Firebase', 'AWS', 'Google Cloud Platform'] },
 ]
 
 const CERTIFICATIONS = [
@@ -68,8 +68,8 @@ export function ImpactAndNotes() {
               <li>
                 <p className="background-date"><span className="background-current" />Oct 2025 – Present</p>
                 <h4>React Native Developer</h4>
-                <p className="background-place">Binnys Management</p>
-                <p className="background-description">Shipping end-to-end features, REST API integrations, UI polish, and rendering optimizations across five Play Store apps.</p>
+                <p className="background-place">Binnys Management · Mumbai</p>
+                <p className="background-description">Shipping Play Store React Native apps, Expo EAS releases, field-agent live location tracking, push notifications, and REST APIs.</p>
                 <ul className="background-apps" aria-label="Production apps">
                   {['Create', 'Vision', 'Scan', 'MyBinnyst', 'Track'].map((app) => <li key={app}>{app}</li>)}
                 </ul>
@@ -123,6 +123,11 @@ export function ImpactAndNotes() {
                 <h4>Open-source author</h4>
                 <p>Creator of rn-whiteboard-kit and expo-location-keepalive.</p>
                 <a href="https://github.com/Sanketnehe-21" target="_blank" rel="noreferrer" className="inline-block mt-2 text-sm text-blue-400">Explore my repositories →</a>
+              </div>
+              <div>
+                <h4>Portfolio v1 · Multi-World Gaming</h4>
+                <p>Built my earlier Tsushima, Minecraft &amp; Los Santos themed interactive gaming portfolio.</p>
+                <a href="https://sanketnehe-21.github.io/portfolio/" target="_blank" rel="noreferrer" className="inline-block mt-2 text-sm text-blue-400">Visit Gaming Edition ↗</a>
               </div>
               <div><h4>Languages</h4><p>Fluent in English, Hindi, and Marathi.</p></div>
             </div>

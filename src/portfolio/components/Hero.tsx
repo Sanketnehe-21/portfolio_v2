@@ -45,7 +45,11 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl theme-muted max-w-2xl mx-auto font-normal leading-relaxed">
-          Hi, I&apos;m Sanket Nehe from Mumbai — a React Native &amp; Full-Stack Developer shipping Play Store apps at Binnys Management, open-source npm tooling, and interactive 3D web experiences.
+          Hi, I&apos;m Sanket Nehe — React Native Developer &amp; React.js Engineer with 1+ year of experience building Play Store mobile apps, Expo EAS releases, real-time tracking, and npm open-source tooling.
+        </p>
+
+        <p className="mt-3 font-mono text-xs tracking-wide theme-subtle-text">
+          Mumbai, India · Open to Mumbai | Pune | Bangalore | Hyderabad | Remote
         </p>
 
         {/* Hero CTA Buttons */}
