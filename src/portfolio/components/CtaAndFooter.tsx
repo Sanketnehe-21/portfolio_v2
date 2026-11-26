@@ -51,8 +51,8 @@ export function CtaAndFooter({
     <>
       {/* CTA Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="theme-surface rounded-3xl border p-10 sm:p-16 text-center space-y-6">
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight theme-text">
+        <div className="theme-surface rounded-3xl border p-5 sm:p-16 text-center space-y-6">
+          <h2 className="text-3xl sm:text-6xl font-bold tracking-tight theme-text">
             Let&apos;s build something
             <br />
             thoughtful
@@ -63,7 +63,7 @@ export function CtaAndFooter({
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="mailto:sanketnehe21@gmail.com"
-              className="theme-btn-primary inline-flex px-8 py-3.5 rounded-full font-semibold text-sm transition-all shadow-xl"
+              className="theme-btn-primary inline-flex max-w-full px-4 sm:px-8 py-3.5 rounded-full font-semibold text-sm transition-all shadow-xl"
             >
               Email sanketnehe21@gmail.com
             </a>
@@ -117,15 +117,16 @@ export function CtaAndFooter({
               <span className="max-sm:hidden">or call +91 93093 67739</span>
             </p>
           </div>
-          <form className="flex w-full md:w-auto max-w-md gap-2" onSubmit={handleSubmit}>
+          <form className="flex flex-col sm:flex-row w-full md:w-auto max-w-md gap-2" onSubmit={handleSubmit}>
             <input
               id="contact-email"
+              aria-label="Your email address"
               type="email"
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
               placeholder="you@company.com"
               required
-              className="theme-input flex-1 px-4 py-2 rounded-full text-xs focus:outline-none focus:border-blue-500"
+              className="theme-input min-w-0 flex-1 px-4 py-3 rounded-full text-base focus:outline-none focus:border-blue-500"
             />
             <button
               type="submit"

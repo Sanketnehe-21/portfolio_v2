@@ -91,7 +91,7 @@ export function WorkflowTimeline() {
           </div>
 
           {/* Right Side: Animated Isometric SVG System Diagram (7 cols) */}
-          <div className="theme-inner lg:col-span-7 flex items-center justify-center rounded-3xl p-6 sm:p-10 border relative overflow-hidden min-h-[440px]">
+          <div className="theme-inner lg:col-span-7 flex items-center justify-center rounded-3xl p-2 sm:p-10 border relative overflow-hidden min-h-[260px] sm:min-h-[440px]">
             <svg
               className="w-full h-auto max-w-[550px]"
               viewBox="0 0 600 500"

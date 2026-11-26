@@ -21,7 +21,7 @@ export function CoreCraft() {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Card 1: Current Role */}
         <div className="expo-card p-8 flex flex-col justify-between">
           <div>

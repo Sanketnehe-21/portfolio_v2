@@ -1,53 +1,22 @@
-const PROFILE_CARDS = [
-  {
-    initials: 'EX',
-    accent: 'bg-blue-500/20 text-blue-400',
-    title: 'Binnys Management · React Native Dev',
-    subtitle: 'Oct 2025 – Present · Play Store Suite',
-    body: 'Shipped end-to-end features, REST API integrations, UI polish, and rendering optimizations across Create, Vision, Scan, MyBinnyst, and Track.',
-  },
-  {
-    initials: 'TS',
-    accent: 'bg-emerald-500/20 text-emerald-400',
-    title: 'Technical Skills & Cloud Stack',
-    subtitle: 'Languages, Frameworks, DBs & Tools',
-    body: '• Languages: JavaScript, TypeScript, HTML, CSS, PHP, Python, Java, C\n• Frameworks & Mobile: React Native, Expo, React, Android/iOS native modules\n• Databases & APIs: MySQL, MongoDB, Firebase Firestore, REST APIs, Google Maps API\n• Cloud & Tools: AWS, Google Cloud Platform, Firebase, Git, GitHub, Bitbucket, Figma, npm\n• Ops: Application troubleshooting, log analysis, incident/problem management',
-    tall: true,
-  },
-  {
-    initials: 'BE',
-    accent: 'bg-purple-500/20 text-purple-400',
-    title: 'B.E. Computer Engineering',
-    subtitle: 'APSIT Thane (Mumbai Univ.) · 2021 – 2025',
-    body: 'Graduated with 8.08 / 10.0 CGPA at A. P. Shah Institute of Technology, Thane — focusing on software systems, mobile engineering, and algorithms.',
-  },
-  {
-    initials: 'CT',
-    accent: 'bg-amber-500/20 text-amber-400',
-    title: 'Certifications',
-    subtitle: 'Cloud, DevOps & Fundamentals',
-    body: 'Google Ads Certification · Azure DevOps Boards · WordPress Development · CISCO IT Essentials · C & C++ (SITH Foundation).',
-  },
-  {
-    initials: 'XII',
-    accent: 'bg-cyan-500/20 text-cyan-400',
-    title: 'N.E.S High School & Junior College',
-    subtitle: 'Bhandup · May 2018 – May 2020',
-    body: 'Completed Senior Secondary (XII) in Science with 86%, building an early foundation in mathematics and computing.',
-  },
-  {
-    initials: 'AW',
-    accent: 'bg-rose-500/20 text-rose-400',
-    title: 'Awards, Hackathons & Languages',
-    subtitle: 'EXALT 2023–24 Winner · OSS Author',
-    body: 'Winner – EXALT 2023–24 (APSIT) · Hackathon Participant · Open-source author (rn-whiteboard-kit, expo-location-keepalive). Fluent in English, Hindi, and Marathi.',
-  },
+const SKILL_GROUPS = [
+  { title: 'Mobile & frontend', skills: ['React Native', 'Expo', 'React', 'Android / iOS native modules', 'HTML', 'CSS'] },
+  { title: 'Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'Java', 'C'] },
+  { title: 'Data & APIs', skills: ['Firebase Firestore', 'MySQL', 'MongoDB', 'REST APIs', 'Google Maps API'] },
+  { title: 'Cloud & collaboration', skills: ['AWS', 'Google Cloud', 'Firebase', 'Git', 'GitHub', 'Bitbucket', 'Figma', 'npm'] },
+  { title: 'Operations', skills: ['Application troubleshooting', 'Log analysis', 'Incident & problem management'] },
+]
+
+const CERTIFICATIONS = [
+  'Google Ads Certification',
+  'Azure DevOps Boards',
+  'WordPress Development',
+  'CISCO IT Essentials',
+  'C & C++ · SITH Foundation',
 ]
 
 export function ImpactAndNotes() {
   return (
     <>
-      {/* Resume Credentials & Impact Strip */}
       <section id="focus" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-y theme-border">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div>
@@ -77,58 +46,87 @@ export function ImpactAndNotes() {
         </div>
       </section>
 
-      {/* Education, Skills, Certifications & Experience Breakdown */}
       <section id="notes" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold theme-text">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight theme-text">
               Background, skills &amp; education
             </h2>
-            <p className="mt-2 text-sm sm:text-base theme-muted max-w-xl">
-              Production engineering experience, technical toolkit, academic milestones from Mumbai University, and certifications.
+            <p className="mt-3 text-base theme-muted max-w-xl leading-relaxed">
+              Building mobile products, publishing developer tools, and putting a computer engineering foundation into practice.
             </p>
           </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="https://github.com/Sanketnehe-21"
-              target="_blank"
-              rel="noreferrer"
-              className="theme-btn-primary px-5 py-2.5 rounded-full font-semibold text-xs transition-all flex items-center gap-2"
-            >
-              Follow on GitHub
-            </a>
-          </div>
+          <a href="#projects" className="theme-pill self-start shrink-0 px-5 py-2.5 rounded-full font-medium text-sm">
+            See the work →
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PROFILE_CARDS.map((item) => (
-            <div
-              key={item.initials}
-              className={`expo-card p-5 flex flex-col justify-between ${
-                item.tall ? 'md:row-span-2' : ''
-              }`}
-            >
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-9 h-9 rounded-full ${item.accent} flex items-center justify-center text-xs font-bold font-mono`}
-                  >
-                    {item.initials}
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold theme-text leading-tight">
-                      {item.title}
-                    </div>
-                    <div className="text-xs theme-subtle-text">{item.subtitle}</div>
-                  </div>
+        <div className="background-grid">
+          <article className="expo-card background-journey">
+            <h3 className="text-xl font-semibold theme-text">Experience &amp; education</h3>
+            <ol className="background-timeline">
+              <li>
+                <p className="background-date"><span className="background-current" />Oct 2025 – Present</p>
+                <h4>React Native Developer</h4>
+                <p className="background-place">Binnys Management</p>
+                <p className="background-description">Shipping end-to-end features, REST API integrations, UI polish, and rendering optimizations across five Play Store apps.</p>
+                <ul className="background-apps" aria-label="Production apps">
+                  {['Create', 'Vision', 'Scan', 'MyBinnyst', 'Track'].map((app) => <li key={app}>{app}</li>)}
+                </ul>
+              </li>
+              <li>
+                <p className="background-date">2021 – 2025</p>
+                <h4>B.E. Computer Engineering</h4>
+                <p className="background-place">A. P. Shah Institute of Technology, Thane</p>
+                <p className="background-description">University of Mumbai. Studied software systems, mobile engineering, and algorithms.</p>
+                <p className="background-result">8.08 <span>/ 10 CGPA</span></p>
+              </li>
+              <li>
+                <p className="background-date">May 2018 – May 2020</p>
+                <h4>Senior Secondary · Science</h4>
+                <p className="background-place">N.E.S High School &amp; Junior College, Bhandup</p>
+                <p className="background-description">A foundation in mathematics and computing.</p>
+                <p className="background-result">86% <span>Class XII</span></p>
+              </li>
+            </ol>
+          </article>
+
+          <article className="expo-card background-toolkit">
+            <h3 className="text-xl font-semibold theme-text">Technical toolkit</h3>
+            <p className="mt-2 text-sm theme-muted leading-relaxed">From mobile interfaces to the services behind them.</p>
+            <div className="background-skills">
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.title}>
+                  <h4>{group.title}</h4>
+                  <ul className="background-tags">
+                    {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                  </ul>
                 </div>
-                <p className="text-xs theme-muted leading-relaxed whitespace-pre-line">
-                  {item.body}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
+          </article>
+
+          <article className="expo-card background-support">
+            <h3 className="text-xl font-semibold theme-text">Certifications</h3>
+            <ul className="background-certifications">
+              {CERTIFICATIONS.map((certificate) => (
+                <li key={certificate}><span aria-hidden="true">↗</span>{certificate}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="expo-card background-support">
+            <h3 className="text-xl font-semibold theme-text">Beyond the day job</h3>
+            <div className="background-recognition">
+              <div><h4>EXALT 2023–24 winner</h4><p>APSIT · Hackathon participant</p></div>
+              <div>
+                <h4>Open-source author</h4>
+                <p>Creator of rn-whiteboard-kit and expo-location-keepalive.</p>
+                <a href="https://github.com/Sanketnehe-21" target="_blank" rel="noreferrer" className="inline-block mt-2 text-sm text-blue-400">Explore my repositories →</a>
+              </div>
+              <div><h4>Languages</h4><p>Fluent in English, Hindi, and Marathi.</p></div>
+            </div>
+          </article>
         </div>
       </section>
     </>

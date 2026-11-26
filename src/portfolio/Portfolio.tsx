@@ -102,8 +102,6 @@ export function Portfolio() {
       <Navbar
         isLight={isLightResolved}
         onToggleTheme={handleToggleTheme}
-        onReplayIntro={replayIntro}
-        onShowToast={showToast}
       />
 
       <main>

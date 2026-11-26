@@ -1,20 +1,38 @@
+import reactLogo from '../assets/stack/react-original.svg'
+import expoLogo from '../assets/stack/expo-original.svg'
+import typescriptLogo from '../assets/stack/typescript-original.svg'
+import javascriptLogo from '../assets/stack/javascript-original.svg'
+import firebaseLogo from '../assets/stack/firebase-original.svg'
+import mapsLogo from '../assets/stack/google-maps.svg'
+import mongodbLogo from '../assets/stack/mongodb-original.svg'
+import mysqlLogo from '../assets/stack/mysql-original.svg'
+import pythonLogo from '../assets/stack/python-original.svg'
+import javaLogo from '../assets/stack/java-original.svg'
+import phpLogo from '../assets/stack/php-original.svg'
+import awsLogo from '../assets/stack/amazonwebservices-original-wordmark.svg'
+import googlecloudLogo from '../assets/stack/googlecloud-original.svg'
+import threejsLogo from '../assets/stack/threejs-original.svg'
+import gitLogo from '../assets/stack/git-original.svg'
+import figmaLogo from '../assets/stack/figma-original.svg'
+
 const STACK_ITEMS = [
-  { label: 'React Native', short: 'RN', color: 'text-cyan-400' },
-  { label: 'Expo', short: 'Expo', color: 'theme-text' },
-  { label: 'TypeScript', short: 'TS', color: 'text-blue-400' },
-  { label: 'JavaScript', short: 'JS', color: 'text-amber-400' },
-  { label: 'React', short: 'React', color: 'text-sky-400' },
-  { label: 'Firebase Firestore', short: 'Fire', color: 'text-orange-400' },
-  { label: 'Google Maps API', short: 'Maps', color: 'text-emerald-400' },
-  { label: 'MongoDB', short: 'Mongo', color: 'text-emerald-400' },
-  { label: 'MySQL', short: 'MySQL', color: 'text-blue-400' },
-  { label: 'Python', short: 'Py', color: 'text-yellow-400' },
-  { label: 'Java', short: 'Java', color: 'text-rose-400' },
-  { label: 'PHP', short: 'PHP', color: 'text-indigo-400' },
-  { label: 'AWS', short: 'AWS', color: 'text-amber-400' },
-  { label: 'Google Cloud Platform', short: 'GCP', color: 'text-blue-400' },
-  { label: 'Three.js & GLSL', short: '3D', color: 'text-violet-400' },
-  { label: 'Figma & Git', short: 'Git', color: 'text-rose-400' },
+  { label: 'React Native', logo: reactLogo },
+  { label: 'Expo', logo: expoLogo, monochrome: true },
+  { label: 'TypeScript', logo: typescriptLogo },
+  { label: 'JavaScript', logo: javascriptLogo },
+  { label: 'React', logo: reactLogo },
+  { label: 'Firebase Firestore', logo: firebaseLogo },
+  { label: 'Google Maps API', logo: mapsLogo },
+  { label: 'MongoDB', logo: mongodbLogo },
+  { label: 'MySQL', logo: mysqlLogo },
+  { label: 'Python', logo: pythonLogo },
+  { label: 'Java', logo: javaLogo },
+  { label: 'PHP', logo: phpLogo },
+  { label: 'AWS', logo: awsLogo },
+  { label: 'Google Cloud Platform', logo: googlecloudLogo },
+  { label: 'Three.js & GLSL', logo: threejsLogo, monochrome: true },
+  { label: 'Git', logo: gitLogo },
+  { label: 'Figma', logo: figmaLogo },
 ]
 
 export function Hero() {
@@ -76,11 +94,14 @@ export function Hero() {
                 key={`${item.label}-${idx}`}
                 className="flex flex-col items-center shrink-0 group cursor-pointer"
                 title={item.label}
+                aria-hidden={idx >= STACK_ITEMS.length}
               >
                 <div className="stack-tile w-12 h-12 rounded-[14px] flex items-center justify-center transition-transform group-hover:scale-110">
-                  <span className={`text-[11px] font-bold font-mono ${item.color}`}>
-                    {item.short}
-                  </span>
+                  <img
+                    src={item.logo}
+                    alt={item.label}
+                    className={item.monochrome ? 'size-7 object-contain stack-logo-monochrome' : 'size-7 object-contain'}
+                  />
                 </div>
               </div>
             ))}

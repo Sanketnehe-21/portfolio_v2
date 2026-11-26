@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ProjectSpotlight } from './ProjectSpotlight'
 
 type FilterKey = 'all' | 'mobile' | 'web' | '3d' | 'oss'
 
@@ -165,6 +166,8 @@ export function ProjectsSection() {
           })}
         </div>
       </div>
+
+      {(activeFilter === 'all' || activeFilter === 'mobile') && <ProjectSpotlight />}
 
       {/* Action button */}
       <div className="mb-8">
