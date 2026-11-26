@@ -94,7 +94,7 @@ export function PerfProfiler({ visible = false }: { visible?: boolean }) {
       hudEl.id = 'perf-telemetry-readout'
       hudEl.style.cssText = isNarrow
         ? 'position:fixed;top:118px;left:8px;right:8px;max-width:calc(100vw - 16px);z-index:9999;background:rgba(2,3,6,0.84);border:1px solid rgba(146,150,166,0.28);border-radius:8px;padding:5px 8px;color:#E4E6ED;font:10px/1.35 monospace;white-space:normal;word-break:break-word;pointer-events:none;text-align:center;will-change:transform,opacity;'
-        : 'position:fixed;top:66px;left:50%;transform:translate3d(-50%, 0, 0);max-width:calc(100vw - 24px);z-index:9999;background:rgba(2,3,6,0.82);border:1px solid rgba(146,150,166,0.28);border-radius:8px;padding:5px 10px;color:#E4E6ED;font:10px monospace;white-space:nowrap;pointer-events:none;will-change:transform,opacity;'
+        : 'position:fixed;top:66px;left:50%;transform:translate3d(-50%, 0, 0);max-width:calc(100vw - 24px);z-index:9999;background:rgba(2,3,6,0.82);border:1px solid rgba(146,150,166,0.28);border-radius:8px;padding:4px 10px;color:#E4E6ED;font:9.5px monospace;white-space:nowrap;pointer-events:none;will-change:transform,opacity;'
       document.body.appendChild(hudEl)
       hudElRef.current = hudEl
     }
